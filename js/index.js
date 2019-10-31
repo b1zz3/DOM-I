@@ -40,6 +40,7 @@ const siteContent = {
 // selectors
 let elemID = id => document.getElementById(id);
 let qSelAll = str => document.querySelectorAll(str);
+let tagSel = str => document.getElementsByTagName(str);
 
 // Example: Update the img src for the logo
 // let logo = document.getElementById("logo-img");
@@ -48,12 +49,12 @@ let qSelAll = str => document.querySelectorAll(str);
 
 // ===== start image load =====
 
-let logo = elemID("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"]);
+let logoImg = elemID("logo-img");
+logoImg.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
-let cta = elemID("cta-img");
-cta.setAttribute('src', siteContent["cta"]["img-src"]);
+let ctaImg = elemID("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let midImg = elemID("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
@@ -63,6 +64,8 @@ midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 // ===== start update content =====
 
+// nav items
+
 let navAnch = qSelAll("a");
 navAnch[0].textContent = siteContent["nav"]["nav-item-1"];
 navAnch[1].textContent = siteContent["nav"]["nav-item-2"];
@@ -70,3 +73,29 @@ navAnch[2].textContent = siteContent["nav"]["nav-item-3"];
 navAnch[3].textContent = siteContent["nav"]["nav-item-4"];
 navAnch[4].textContent = siteContent["nav"]["nav-item-5"];
 navAnch[5].textContent = siteContent["nav"]["nav-item-6"];
+
+// cta
+
+let ctaHead = tagSel("h1");
+ctaHead[0].textContent = siteContent["cta"]["h1"];
+
+let ctaBtn = tagSel("button");
+ctaBtn[0].textContent = siteContent["cta"]["button"];
+
+// main-content
+
+
+let subHead = tagSel("h4");
+subHead[0].textContent = siteContent["main-content"]["features-h4"];
+subHead[1].textContent = siteContent["main-content"]["about-h4"];
+subHead[2].textContent = siteContent["main-content"]["services-h4"];
+subHead[3].textContent = siteContent["main-content"]["product-h4"];
+subHead[4].textContent = siteContent["main-content"]["vision-h4"];
+subHead[1].textContent = siteContent["main-content"]["about-h4"];
+
+let para = tagSel("p");
+para[0].textContent = siteContent["main-content"]["features-content"];
+para[1].textContent = siteContent["main-content"]["about-content"];
+para[2].textContent = siteContent["main-content"]["services-content"];
+para[3].textContent = siteContent["main-content"]["product-content"];
+para[4].textContent = siteContent["main-content"]["vision-content"];

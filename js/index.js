@@ -110,3 +110,21 @@ para[7].textContent = siteContent["contact"]["email"];
 // footer
 
 para[8].textContent = siteContent["footer"]["copyright"];
+
+
+// styles
+
+// navAnch[0].style.color = 'green';
+// navAnch[1].style.color = 'green';
+
+navAnch.forEach (a => {
+  a.style.color = 'green';
+});
+
+
+let navs = tagSel("nav");
+
+let anch = document.createElement("a");
+anch.textContent = "Last";
+
+navs.appendChild(anch);

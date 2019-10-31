@@ -39,11 +39,14 @@ const siteContent = {
 
 // selectors
 let elemID = id => document.getElementById(id);
+let qSelAll = str => document.querySelectorAll(str);
 
 // Example: Update the img src for the logo
 // let logo = document.getElementById("logo-img");
 
 // test shorthand elemID  --- works! cool :)
+
+// ===== start image load =====
 
 let logo = elemID("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
@@ -55,7 +58,15 @@ cta.setAttribute('src', siteContent["cta"]["img-src"]);
 let midImg = elemID("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-// end image load
+// ===== end image load =====
 
 
-// start update content
+// ===== start update content =====
+
+let navAnch = qSelAll("a");
+navAnch[0].textContent = siteContent["nav"]["nav-item-1"];
+navAnch[1].textContent = siteContent["nav"]["nav-item-2"];
+navAnch[2].textContent = siteContent["nav"]["nav-item-3"];
+navAnch[3].textContent = siteContent["nav"]["nav-item-4"];
+navAnch[4].textContent = siteContent["nav"]["nav-item-5"];
+navAnch[5].textContent = siteContent["nav"]["nav-item-6"];

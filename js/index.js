@@ -37,12 +37,25 @@ const siteContent = {
   },
 };
 
+// selectors
+let elemID = id => document.getElementById(id);
+
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+// let logo = document.getElementById("logo-img");
+
+// test shorthand elemID  --- works! cool :)
+
+let logo = elemID("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-let cta = document.getElementById("cta-img");
+
+let cta = elemID("cta-img");
 cta.setAttribute('src', siteContent["cta"]["img-src"]);
 
-let midImg = document.getElementById("middle-img");
+let midImg = elemID("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// end image load
+
+
+// start update content

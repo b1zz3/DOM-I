@@ -117,14 +117,25 @@ para[8].textContent = siteContent["footer"]["copyright"];
 // navAnch[0].style.color = 'green';
 // navAnch[1].style.color = 'green';
 
-navAnch.forEach (a => {
-  a.style.color = 'green';
-});
 
 
-let navs = tagSel("nav");
+
+let navs = document.querySelector("nav");
 
 let anch = document.createElement("a");
 anch.textContent = "Last";
 
 navs.appendChild(anch);
+
+let anchPre = document.createElement("a");
+anchPre.textContent = "First";
+
+navs.prepend(anchPre);
+
+
+navAnch.forEach (a => {
+  a.style.color = 'green';
+});
+
+// **** forEach loop doesn't affect append/prepend - find out why ****
+

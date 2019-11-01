@@ -37,6 +37,118 @@ const siteContent = {
   },
 };
 
+// selectors
+let elemID = id => document.getElementById(id);
+let qSelAll = str => document.querySelectorAll(str);
+let tagSel = str => document.getElementsByTagName(str);
+
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+
+// test shorthand elemID  --- works! cool :)
+
+// ===== start image load =====
+
+let logoImg = elemID("logo-img");
+logoImg.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+let ctaImg = elemID("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let midImg = elemID("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// ===== end image load =====
+
+
+// ===== start update content =====
+
+// nav items
+
+let navAnch = qSelAll("a");
+navAnch[0].textContent = siteContent["nav"]["nav-item-1"];
+navAnch[1].textContent = siteContent["nav"]["nav-item-2"];
+navAnch[2].textContent = siteContent["nav"]["nav-item-3"];
+navAnch[3].textContent = siteContent["nav"]["nav-item-4"];
+navAnch[4].textContent = siteContent["nav"]["nav-item-5"];
+navAnch[5].textContent = siteContent["nav"]["nav-item-6"];
+
+// cta
+
+let ctaHead = tagSel("h1");
+ctaHead[0].textContent = siteContent["cta"]["h1"];
+
+let ctaBtn = tagSel("button");
+ctaBtn[0].textContent = siteContent["cta"]["button"];
+
+// main-content
+
+
+let subHead = tagSel("h4");
+subHead[0].textContent = siteContent["main-content"]["features-h4"];
+subHead[1].textContent = siteContent["main-content"]["about-h4"];
+subHead[2].textContent = siteContent["main-content"]["services-h4"];
+subHead[3].textContent = siteContent["main-content"]["product-h4"];
+subHead[4].textContent = siteContent["main-content"]["vision-h4"];
+
+let para = tagSel("p");
+para[0].textContent = siteContent["main-content"]["features-content"];
+para[1].textContent = siteContent["main-content"]["about-content"];
+para[2].textContent = siteContent["main-content"]["services-content"];
+para[3].textContent = siteContent["main-content"]["product-content"];
+para[4].textContent = siteContent["main-content"]["vision-content"];
+
+// contact
+
+subHead[5].textContent = siteContent["contact"]["contact-h4"];
+
+para[5].textContent = siteContent["contact"]["address"];
+para[6].textContent = siteContent["contact"]["phone"];
+para[7].textContent = siteContent["contact"]["email"];
+
+// footer
+
+para[8].textContent = siteContent["footer"]["copyright"];
+
+
+// styles
+
+let navs = document.querySelector("nav");
+
+let anch = document.createElement("a");
+anch.textContent = "Last";
+
+navs.appendChild(anch);
+
+let anchPre = document.createElement("a");
+anchPre.textContent = "First";
+
+navs.prepend(anchPre);
+
+
+navAnch.forEach (a => {
+  a.style.color = 'green';
+});
+
+navAnch[0].style.color = 'green';
+navAnch[1].style.color = 'green';
+
+
+// **** forEach loop doesn't affect append/prepend - find out why ****
+
+
+
+// ===== stretch =====
+
+const styleSel = document.getElementsByTagName("p");
+const fStyle = ["italic", "normal"]
+
+let styleBtn = document.createElement("button");
+styleBtn.textContent = "Styles-Yo"
+// styleBtn.onclick = () => alert(this);
+
+const makeBtn = document.querySelector(".cta-text");
+makeBtn.appendChild(styleBtn);
+
+styleBtn.onclick = styleSel[0].style.color = 'blue';

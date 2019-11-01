@@ -141,12 +141,14 @@ navAnch[1].style.color = 'green';
 
 // ===== stretch =====
 
-const styleSel = document.getElementsByTagName("h4 p");
-const fontStyle = ["font-style:italic;", "font-style:normal;"]
+const styleSel = document.getElementsByTagName("p");
+const fStyle = ["italic", "normal"]
 
 let styleBtn = document.createElement("button");
 styleBtn.textContent = "Styles-Yo"
-styleBtn.onclick = () => alert(this);
+// styleBtn.onclick = () => alert(this);
 
 const makeBtn = document.querySelector(".cta-text");
 makeBtn.appendChild(styleBtn);
+
+styleBtn.onclick = styleSel[0].style.color = 'blue';

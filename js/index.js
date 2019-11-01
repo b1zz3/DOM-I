@@ -114,12 +114,6 @@ para[8].textContent = siteContent["footer"]["copyright"];
 
 // styles
 
-// navAnch[0].style.color = 'green';
-// navAnch[1].style.color = 'green';
-
-
-
-
 let navs = document.querySelector("nav");
 
 let anch = document.createElement("a");
@@ -137,5 +131,22 @@ navAnch.forEach (a => {
   a.style.color = 'green';
 });
 
+navAnch[0].style.color = 'green';
+navAnch[1].style.color = 'green';
+
+
 // **** forEach loop doesn't affect append/prepend - find out why ****
 
+
+
+// ===== stretch =====
+
+const styleSel = document.getElementsByTagName("h4 p");
+const fontStyle = ["font-style:italic;", "font-style:normal;"]
+
+let styleBtn = document.createElement("button");
+styleBtn.textContent = "Styles-Yo"
+styleBtn.onclick = () => alert(this);
+
+const makeBtn = document.querySelector(".cta-text");
+makeBtn.appendChild(styleBtn);
